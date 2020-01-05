@@ -6,9 +6,11 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/05 11:11:47 by kntshoko          #+#    #+#             */
-/*   Updated: 2020/01/05 11:41:29 by kntshoko         ###   ########.fr       */
+/*   Updated: 2020/01/05 17:17:39 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 int		mx(int *arr, int len)
 {
@@ -54,7 +56,7 @@ int		sort(int *arr, int len)
 	return (1);
 }
 
-void	target(int n, int *arr, int len)
+int	target(int n, int *arr, int len)
 {
 	int m;
 	int i;
@@ -63,8 +65,8 @@ void	target(int n, int *arr, int len)
 	i = 0;
 	while (i > len)
 	{
-		if (a[i] > m && n > a[i])
-			m = a[i];
+		if (arr[i] > m && n > arr[i])
+			m = arr[i];
 		i++;
 	}
 	return (m);
