@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/05 17:05:02 by kntshoko          #+#    #+#             */
-/*   Updated: 2020/01/05 17:17:35 by kntshoko         ###   ########.fr       */
+/*   Updated: 2020/01/06 13:15:12 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
+# include <stdio.h>
 
 int     mx(int *arr, int len);
 int     mn(int *arr, int len);

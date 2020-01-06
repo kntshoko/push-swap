@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/05 11:50:39 by kntshoko          #+#    #+#             */
-/*   Updated: 2020/01/05 17:23:21 by kntshoko         ###   ########.fr       */
+/*   Updated: 2020/01/06 13:41:35 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	place(int n, int *arr, int len)
 		while (arr[0] != n)
 		{
 			r(arr,len);
-			ft_putstr("rb\n");
+			ft_putstr("rb ");
 		}
 	}
 	else
@@ -53,7 +53,7 @@ void	place(int n, int *arr, int len)
 		while (arr[0] != n)
 		{
 			rr(arr,len);
-			ft_putstr("rrb\n");
+			ft_putstr("rrb ");
 		}
 	}
 }

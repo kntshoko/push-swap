@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/05 11:11:47 by kntshoko          #+#    #+#             */
-/*   Updated: 2020/01/05 17:17:39 by kntshoko         ###   ########.fr       */
+/*   Updated: 2020/01/06 13:12:49 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,11 @@ int	target(int n, int *arr, int len)
 	int m;
 	int i;
 
-	m = arr[0];
+	m = mn(arr,len);
 	i = 0;
-	while (i > len)
+	while (i < len)
 	{
-		if (arr[i] > m && n > arr[i])
+		if (arr[i] >  m && n > arr[i])
 			m = arr[i];
 		i++;
 	}
