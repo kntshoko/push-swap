@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/05 17:05:02 by kntshoko          #+#    #+#             */
-/*   Updated: 2020/01/06 13:15:12 by kntshoko         ###   ########.fr       */
+/*   Updated: 2020/01/08 10:36:46 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ void    rr(int *a, int i);
 int     rev(int n, int *arr, int len);
 int     rot(int n, int *arr, int len);
 void    place(int n, int *arr, int len);
-
+int		md(int *arr, int len);
 #endif

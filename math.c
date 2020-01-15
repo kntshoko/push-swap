@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/05 11:11:47 by kntshoko          #+#    #+#             */
-/*   Updated: 2020/01/06 13:12:49 by kntshoko         ###   ########.fr       */
+/*   Updated: 2020/01/08 11:37:43 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,32 @@ int	target(int n, int *arr, int len)
 		i++;
 	}
 	return (m);
+}
+
+int	md(int *arr, int len)
+{
+	int *a;
+	int temp;
+	int i;
+	int j;
+
+	a = malloc(len * sizeof(int));
+	ft_memcpy(a,arr,len*sizeof(int));
+	i = -1;
+	while(++i < len)
+	{
+		j = -1;
+		while(++j < len)
+		{
+			if (a[i] <  a[j] )
+			{
+				temp = a[i];
+				a[i] = a[j];
+				a[j] = temp;
+			}
+		}
+	}
+	temp = a[len /2];
+	free(a);
+	return (temp);
 }
