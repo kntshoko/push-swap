@@ -77,41 +77,32 @@ int wordcount(char **str)
 	int i = 0;
 
 	while(str[i] != NULL)
-		i++;	
+		i++;
+	free(str);
 	return(i);
 }
 
-void convert(int *a, char **str)
+int *convert(char **str, int len)
 {
 	int i;
+	int *a;
 
+	a = a = (int *)malloc(sizeof(int)*(len));
 	i = 0;
 	while(str[i] != NULL)
 	{
 		a[i] = ft_atoi(str[i]);
 		i++;
 	}
+	free(str);
+	return (a);
 }
 
-int	make(int *a, char *str)
-{
-	
-	char **split;
-
-	split = ft_strsplit(str, ' ');
-	i = wordcount(split);
-	
-	
-	a = (int *)malloc(sizeof(int)*(i - 1));
-	a = convert(split);
-	free(split);
-	return(i);
-}
 
 int main(int c, char **v)
 {
 	int *a;
-	int alen = 0;
+	int alen ;
 
 	a = NULL;
 
@@ -120,8 +111,8 @@ int main(int c, char **v)
 	if ( c > 1 && ok(v[1]) == 1)
 	{
 		
-		int i = make(a,v[1]);
-		printf("\n numbers == %d", a[i]);
+		alen =  wordcount(ft_strsplit(v[1], ' '));
+		a = convert(ft_strsplit(v[1], ' '), alen);
 		if (alen <= 100)
 			sortless(a,alen);
 		//else
