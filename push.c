@@ -12,6 +12,9 @@
 
 #include "push_swap.h"
 
+
+
+
 int mid(int m, int *a, int alen)
 {
 	int i = 0;
@@ -29,7 +32,7 @@ void	sortless(int *a,int alen)
 	int i;
 	int b[alen];
 	int blen = 0;
-
+	
 	while(sort(a,alen) != 1 )
 	{
 		i = md(a,alen);
@@ -58,16 +61,14 @@ int ok(char *str)
 {
 	int i;
 
-
 	i = 0;
 	while(str[i])
 	{	
-		if('-' == str[i] || ' ' == str[i] || ft_isdigit(str[i]) == 1)
+		if((str[i] == '-' || str[i] == ' ' || ft_isdigit(str[i]) == 1) && str[i] != '\0')
 			i++;
 		else
 			return(0);
 	}
-	
 	return 1;
 }
 
@@ -76,7 +77,7 @@ int wordcount(char **str)
 	int i = 0;
 
 	while(str[i] != NULL)
-		i++;
+		i++;	
 	return(i);
 }
 
@@ -92,21 +93,25 @@ void convert(int *a, char **str)
 	}
 }
 
-void	make(int *a, int *alen, char *str)
+int	make(int *a, char *str)
 {
+	
 	char **split;
 
 	split = ft_strsplit(str, ' ');
-	*alen = wordcount(split);
-	a = (int *)malloc(sizeof(int)*(*alen));
-	convert(a,split);
+	i = wordcount(split);
+	
+	
+	a = (int *)malloc(sizeof(int)*(i - 1));
+	a = convert(split);
 	free(split);
+	return(i);
 }
 
 int main(int c, char **v)
 {
 	int *a;
-	int alen;
+	int alen = 0;
 
 	a = NULL;
 
@@ -115,7 +120,8 @@ int main(int c, char **v)
 	if ( c > 1 && ok(v[1]) == 1)
 	{
 		
-		make(a,&alen,v[1]);
+		int i = make(a,v[1]);
+		printf("\n numbers == %d", a[i]);
 		if (alen <= 100)
 			sortless(a,alen);
 		//else
