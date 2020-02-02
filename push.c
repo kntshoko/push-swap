@@ -24,9 +24,11 @@ int mid(int m, int *a, int alen)
 	return (1);
 }
 
-void	less()
+void	less(int *a,int alen)
 {
 	int i;
+	int b[alen];
+	int blen = 0;
 
 	while(sort(a,alen) != 1 )
 	{
@@ -64,6 +66,38 @@ int ok(char *str)
 		i++;
 	}
 	return 1;
+}
+
+int wordcount(char **str)
+{
+	int i = 0;
+
+	while(str[i] != NULL)
+		i++;
+	return(i);
+}
+
+void convert(int *a, char **str)
+{
+	int i;
+
+	i = 0;
+	while(str[i] != NULL)
+	{
+		a[i] = ft_atoi(str[i]);
+		i++;
+	}
+}
+
+void	make(int *a, int *alen, int *str)
+{
+	char *split;
+
+	split = ft_strsplit(str, ' ');
+	*alen = wordcount(split);
+	a = (int *)malloc(sizeof(int)*alen);
+	convert(a,split);
+	free(split);
 }
 
 int main(int c, int **v)
