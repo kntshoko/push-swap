@@ -13,9 +13,9 @@
 NAME = push_swap.a
 NAME2 = checker.a
 EXE = push_swap
-EXE2 = checker 
+EXE2 = checker
 MAIN = push.c
-MAIN2 = check
+MAIN2 = check.c
 LIB = libft/libft.a 
 CC = gcc
 FLAG = -Wall -Werror -Wextra
@@ -35,8 +35,8 @@ $(NAME):
 		$(ARC) $(NAME) $(OBJ)
 		ranlib $(NAME)
 		$(CC) $(FLAG) -o $(EXE) $(MAIN) $(LIB) $(NAME) 
-		ranlib $(NAME)
-		$(CC) $(FLAG) -o $(EXE2) $(MAIN2) $(LIB) $(NAME2) 
+		# ranlib $(NAME)
+		# $(CC) $(FLAG) -o $(EXE2) $(MAIN2) $(LIB) $(NAME2) 
 
 all: $(NAME)
 

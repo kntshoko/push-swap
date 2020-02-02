@@ -24,7 +24,7 @@ int mid(int m, int *a, int alen)
 	return (1);
 }
 
-void	less(int *a,int alen)
+void	sortless(int *a,int alen)
 {
 	int i;
 	int b[alen];
@@ -58,13 +58,16 @@ int ok(char *str)
 {
 	int i;
 
+
 	i = 0;
-	while(str[i] != '\0')
-	{
-		if('-' != str[i] || ' ' != str[i] || (str[i] >= 48 && str[i] <= 57))
+	while(str[i])
+	{	
+		if('-' == str[i] || ' ' == str[i] || ft_isdigit(str[i]) == 1)
+			i++;
+		else
 			return(0);
-		i++;
 	}
+	
 	return 1;
 }
 
@@ -89,28 +92,34 @@ void convert(int *a, char **str)
 	}
 }
 
-void	make(int *a, int *alen, int *str)
+void	make(int *a, int *alen, char *str)
 {
-	char *split;
+	char **split;
 
 	split = ft_strsplit(str, ' ');
 	*alen = wordcount(split);
-	a = (int *)malloc(sizeof(int)*alen);
+	a = (int *)malloc(sizeof(int)*(*alen));
 	convert(a,split);
 	free(split);
 }
 
-int main(int c, int **v)
+int main(int c, char **v)
 {
 	int *a;
 	int alen;
+
+	a = NULL;
+
+	
+
 	if ( c > 1 && ok(v[1]) == 1)
 	{
-		make(a,&alen,v);
+		
+		make(a,&alen,v[1]);
 		if (alen <= 100)
 			sortless(a,alen);
-		else
-			sortmore(a,alen);
+		//else
+		//	sortmore(a,alen);
 	}	
 	return (0);
 }
