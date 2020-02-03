@@ -27,35 +27,52 @@ int mid(int m, int *a, int alen)
 	return (1);
 }
 
+void backto(int *a, int *alen, int *b, int *blen)
+{
+	while(*blen > 0)
+	{
+		place(mx(b,*blen),b,*blen);
+		ft_putstr("pa ");
+        p(b,blen,a,alen);
+	}
+}
+
+void tob(int *a, int *alen, int *b, int *blen)
+{
+	int i;
+
+	while(sort(a,*alen) != 1 )
+	{
+		i = md(a,*alen);
+		while(sort(a,*alen) != 1 && mid(i,a,*alen) != 1)
+		{
+			if (a[0] > a[1])
+			{
+				ft_putstr("sa ");
+				s(a,*alen);
+			}
+			else if (a[0] < i)
+			{
+				ft_putstr("pb ");
+                p(a,alen,b,blen);
+			}
+			else
+			{
+				ft_putstr("rra ");
+				rr(a,*alen);
+			}
+		}
+	}
+}
+
 void	sortless(int *a,int alen)
 {
 	int i;
 	int b[alen];
 	int blen = 0;
 	
-	while(sort(a,alen) != 1 )
-	{
-		i = md(a,alen);
-		while(sort(a,alen) != 1 && mid(i,a,alen) != 1)
-		{
-			if (a[0] > a[1])
-			{
-				ft_putstr("sa ");
-				s(a,alen);
-			}
-			else if (a[0] < i)
-			{
-				ft_putstr("pb ");
-                p(a,&alen,b,&blen);
-			}
-			else
-			{
-				ft_putstr("rra ");
-				rr(a,alen);
-			}
-		}
-	}
-
+	tob(a,&alen,b,&blen);
+	backto(a,&alen,b,&blen);
 	while(blen > 0)
 	{
 		place(mx(b,blen),b,blen);
