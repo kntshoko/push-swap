@@ -55,6 +55,28 @@ void	sortless(int *a,int alen)
 			}
 		}
 	}
+
+	while(blen > 0)
+	{
+		place(mx(b,blen),b,blen);
+		ft_putstr("pa ");
+        p(b,&blen,a,&alen);
+	}
+
+	i = 0;
+	printf("\na\n");
+	while (i < alen)
+	{
+		printf("%d ",a[i]);
+		i++;
+	}
+	printf("\nb\n");
+	i = 0;
+	while (i < blen)
+	{
+		printf("%d ",b[i]);
+		i++;
+	}
 }
 
 int ok(char *str)
@@ -87,7 +109,7 @@ int *convert(char **str, int len)
 	int i;
 	int *a;
 
-	a = a = (int *)malloc(sizeof(int)*(len));
+	a = (int *)malloc(sizeof(int)*(len));
 	i = 0;
 	while(str[i] != NULL)
 	{
@@ -105,9 +127,6 @@ int main(int c, char **v)
 	int alen ;
 
 	a = NULL;
-
-	
-
 	if ( c > 1 && ok(v[1]) == 1)
 	{
 		
@@ -115,8 +134,7 @@ int main(int c, char **v)
 		a = convert(ft_strsplit(v[1], ' '), alen);
 		if (alen <= 100)
 			sortless(a,alen);
-		//else
-		//	sortmore(a,alen);
 	}	
+	free(a);
 	return (0);
 }
