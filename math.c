@@ -56,6 +56,7 @@ int		sort(int *arr, int len)
 	return (1);
 }
 
+
 int	target(int n, int *arr, int len)
 {
 	int m;

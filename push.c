@@ -13,7 +13,33 @@
 #include "push_swap.h"
 
 
+int	mdb(int *arr, int len)
+{
+	int *a;
+	int temp;
+	int i;
+	int j;
 
+	a = malloc(len * sizeof(int));
+	ft_memcpy(a,arr,len*sizeof(int));
+	i = -1;
+	while(++i < len)
+	{
+		j = -1;
+		while(++j < len)
+		{
+			if (a[i] >  a[j] )
+			{
+				temp = a[i];
+				a[i] = a[j];
+				a[j] = temp;
+			}
+		}
+	}
+	temp = a[len /2];
+	free(a);
+	return (temp);
+}
 
 int mid(int m, int *a, int alen)
 {
@@ -27,7 +53,19 @@ int mid(int m, int *a, int alen)
 	return (1);
 }
 
-void backto(int *a, int *alen, int *b, int *blen)
+int midb(int m, int *b, int blen)
+{
+	int i = 0;
+	while (i < blen)
+	{
+		if (b[i] > m)
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+void backtoa(int *a, int *alen, int *b, int *blen)
 {
 	while(*blen > 0)
 	{
@@ -65,6 +103,49 @@ void tob(int *a, int *alen, int *b, int *blen)
 	}
 }
 
+int		sortb(int *arr, int len)
+{
+	int i;
+
+	i = 1;
+	while (i < len)
+	{
+		if (arr[i - 1] < arr[i])
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+void toa(int *a, int *alen, int *b, int *blen)
+{
+	int i;
+
+	while(sortb(b,*blen) != 1 )
+	{
+		i = mdb(b,*blen);
+		while(sortb(b,*blen) != 1 && midb(i,b,*blen) != 1)
+		{
+			if (b[0] < b[1])
+			{
+				ft_putstr("sb ");
+				s(b,*blen);
+			}
+			else if (b[0] > i)
+			{
+				ft_putstr("pb ");
+                p(b,blen,a,alen);
+			}
+			else
+			{
+				ft_putstr("rrb ");
+				rr(b,*blen);
+			}
+		}
+	}
+}
+
+
 void	sortless(int *a,int alen)
 {
 	int i;
@@ -72,7 +153,39 @@ void	sortless(int *a,int alen)
 	int blen = 0;
 	
 	tob(a,&alen,b,&blen);
-	backto(a,&alen,b,&blen);
+	backtoa(a,&alen,b,&blen);
+	while(blen > 0)
+	{
+		place(mx(b,blen),b,blen);
+		ft_putstr("pa ");
+        p(b,&blen,a,&alen);
+	}
+
+	i = 0;
+	printf("\na\n");
+	while (i < alen)
+	{
+		printf("%d ",a[i]);
+		i++;
+	}
+	printf("\nb\n");
+	i = 0;
+	while (i < blen)
+	{
+		printf("%d ",b[i]);
+		i++;
+	}
+}
+
+void	sortmore(int *a,int alen)
+{
+	int i;
+	int b[alen];
+	int blen = 0;
+	
+	tob(a,&alen,b,&blen);
+	toa(a,&alen,b,&blen);
+	backtoa(a,&alen,b,&blen);
 	while(blen > 0)
 	{
 		place(mx(b,blen),b,blen);
@@ -151,6 +264,8 @@ int main(int c, char **v)
 		a = convert(ft_strsplit(v[1], ' '), alen);
 		if (alen <= 100)
 			sortless(a,alen);
+		else
+			sortmore(a,alen);
 	}	
 	free(a);
 	return (0);
