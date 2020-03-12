@@ -70,7 +70,7 @@ void backtoa(int *a, int *alen, int *b, int *blen)
 	while(*blen > 0)
 	{
 		place(mx(b,*blen),b,*blen);
-		ft_putstr("pa ");
+		ft_putendl("pa");
         p(b,blen,a,alen);
 	}
 }
@@ -86,17 +86,17 @@ void tob(int *a, int *alen, int *b, int *blen)
 		{
 			if (a[0] > a[1])
 			{
-				ft_putstr("sa ");
+				ft_putendl("sa");
 				s(a,*alen);
 			}
 			else if (a[0] < i)
 			{
-				ft_putstr("pb ");
+				ft_putendl("pb");
                 p(a,alen,b,blen);
 			}
 			else
 			{
-				ft_putstr("rra ");
+				ft_putendl("rra");
 				rr(a,*alen);
 			}
 		}
@@ -128,17 +128,17 @@ void toa(int *a, int *alen, int *b, int *blen)
 		{
 			if (b[0] < b[1])
 			{
-				ft_putstr("sb ");
+				ft_putendl("sb");
 				s(b,*blen);
 			}
 			else if (b[0] > i)
 			{
-				ft_putstr("pb ");
+				ft_putendl("pb");
                 p(b,blen,a,alen);
 			}
 			else
 			{
-				ft_putstr("rrb ");
+				ft_putendl("rrb");
 				rr(b,*blen);
 			}
 		}
@@ -148,7 +148,6 @@ void toa(int *a, int *alen, int *b, int *blen)
 
 void	sortless(int *a,int alen)
 {
-	int i;
 	int b[alen];
 	int blen = 0;
 	
@@ -157,29 +156,13 @@ void	sortless(int *a,int alen)
 	while(blen > 0)
 	{
 		place(mx(b,blen),b,blen);
-		ft_putstr("pa ");
+		ft_putendl("pa");
         p(b,&blen,a,&alen);
-	}
-
-	i = 0;
-	printf("\na\n");
-	while (i < alen)
-	{
-		printf("%d ",a[i]);
-		i++;
-	}
-	printf("\nb\n");
-	i = 0;
-	while (i < blen)
-	{
-		printf("%d ",b[i]);
-		i++;
 	}
 }
 
 void	sortmore(int *a,int alen)
 {
-	int i;
 	int b[alen];
 	int blen = 0;
 	
@@ -189,20 +172,8 @@ void	sortmore(int *a,int alen)
 	while(blen > 0)
 	{
 		place(mx(b,blen),b,blen);
-		ft_putstr("pa ");
+		ft_putendl("pa");
         p(b,&blen,a,&alen);
-	}
-	i = 0;
-	while (i < alen)
-	{
-		printf("%d ",a[i]);
-		i++;
-	}
-	i = 0;
-	while (i < blen)
-	{
-		printf("%d ",b[i]);
-		i++;
 	}
 }
 

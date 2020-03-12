@@ -68,7 +68,8 @@ SRC = ft_atoi.c\
 	  ft_toupper.c\
 	  ft_lstnew.c\
 	  ft_lstadd.c\
-	  ft_lstdelone.c
+	  ft_lstdelone.c\
+	  get_next_line.c\
 
 OBJ = ft_atoi.o\
 	  ft_bzero.o\
@@ -124,7 +125,8 @@ OBJ = ft_atoi.o\
 	  ft_toupper.o\
 	  ft_lstnew.o\
 	  ft_lstadd.o\
-	  ft_lstdelone.o
+	  ft_lstdelone.o\
+	  get_next_line.o\
 
 # all: $(NAME)
 
