@@ -13,7 +13,7 @@
 #include "push_swap.h"
 
 
-int	mdb(int *arr, int len)
+static int	mdb(int *arr, int len)
 {
 	int *a;
 	int temp;
@@ -192,15 +192,12 @@ void	sortmore(int *a,int alen)
 		ft_putstr("pa ");
         p(b,&blen,a,&alen);
 	}
-
 	i = 0;
-	printf("\na\n");
 	while (i < alen)
 	{
 		printf("%d ",a[i]);
 		i++;
 	}
-	printf("\nb\n");
 	i = 0;
 	while (i < blen)
 	{
@@ -209,7 +206,7 @@ void	sortmore(int *a,int alen)
 	}
 }
 
-int ok(char *str)
+int okk(char *str)
 {
 	int i;
 
@@ -250,14 +247,13 @@ int *convert(char **str, int len)
 	return (a);
 }
 
-
 int main(int c, char **v)
 {
 	int *a;
 	int alen ;
 
 	a = NULL;
-	if ( c > 1 && ok(v[1]) == 1)
+	if ( c > 1 && okk(v[1]) == 1)
 	{
 		
 		alen =  wordcount(ft_strsplit(v[1], ' '));

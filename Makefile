@@ -34,16 +34,19 @@ $(NAME):
 		$(CC) $(FLAG) -c $(SRC)
 		$(ARC) $(NAME) $(OBJ)
 		ranlib $(NAME)
-		$(CC) $(FLAG) -o $(EXE) $(MAIN) $(LIB) $(NAME) 
-		# ranlib $(NAME)
-		# $(CC) $(FLAG) -o $(EXE2) $(MAIN2) $(LIB) $(NAME2) 
+		$(CC) $(FLAG) -o $(EXE) $(MAIN) $(LIB) $(NAME)
+		$(ARC) $(NAME2) $(OBJ) 
+		ranlib $(NAME2)
+		$(CC) $(FLAG) -o $(EXE2) $(MAIN2) $(LIB) $(NAME2) 
 
 all: $(NAME)
+	$(NAME2)
 
 clean:
 		rm -f $(OBJ)
 
 fclean: clean
 		rm -f $(NAME) $(EXE)
+		rm -f $(NAME2) $(EXE2)
 
 re: fclean all
