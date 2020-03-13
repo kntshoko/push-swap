@@ -37,23 +37,22 @@ int main(int c, char **v)
 	char *ins;
 	char *temp;
 
+	while(get_next_line(0,&str) == 1)
+	{
+		if(ins != NULL)
+		{
+			temp = ft_strdup(ins);
+			free(ins);
+			ins = ft_joint(temp,"  ",str);
+		}
+		else
+			ins = ft_strdup(str);
+	}
 	if (c > 1)
 	{
 		if(ok(v[1]) == 1)
 		{
 			ft_putendl("ok");
-			while(get_next_line(1,&str) == 1)
-			{
-				if(ins != NULL)
-				{
-					temp = ft_strdup(ins);
-					free(ins);
-					ins = ft_joint(temp,"\n",str);
-				}
-				else
-					ins = ft_strdup(str);
-			}
-			ft_putendl(ins);
 		}
 		else
 		{
