@@ -36,6 +36,7 @@ int main(int c, char **v)
 	char *str;
 	char *ins;
 	char *temp;
+	char **mv;
 
 	while(get_next_line(0,&str) == 1)
 	{
@@ -48,11 +49,20 @@ int main(int c, char **v)
 		else
 			ins = ft_strdup(str);
 	}
+		mv = ft_strsplit(ins,' ');
 	if (c > 1)
 	{
 		if(ok(v[1]) == 1)
 		{
-			ft_putendl("ok");
+			int i = 0;
+			if(mv)
+			{
+				while ( mv[i] != NULL)
+				{
+					ft_putendl(mv[i]);
+					i++;
+				}
+			}	
 		}
 		else
 		{
@@ -61,4 +71,3 @@ int main(int c, char **v)
 	}	
 	return(0);
 }
-
