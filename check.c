@@ -1,5 +1,32 @@
 #include "push_swap.h"
 
+int wdct(char **str)
+{
+        int i = 0;
+
+        while(str[i] != NULL)
+                i++;
+        free(str);
+        return(i);
+}
+
+int *cnv(char **str, int len)
+{
+        int i;
+        int *a;
+
+        a = (int *)malloc(sizeof(int)*(len));
+        i = 0;
+        while(str[i] != NULL)
+        {
+                a[i] = ft_atoi(str[i]);
+                i++;
+        }
+        free(str);
+        return (a);
+}
+
+
 
 char	*ft_joint(char *s1, char *s2, char *s3)
 {
