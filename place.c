@@ -45,7 +45,7 @@ void	place(int n, int *arr, int len)
 		while (arr[0] != n)
 		{
 			r(arr,len);
-			ft_putstr("rb ");
+			ft_putendl("rb");
 		}
 	}
 	else
@@ -53,7 +53,7 @@ void	place(int n, int *arr, int len)
 		while (arr[0] != n)
 		{
 			rr(arr,len);
-			ft_putstr("rrb ");
+			ft_putendl("rrb");
 		}
 	}
 }

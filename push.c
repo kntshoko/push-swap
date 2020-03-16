@@ -133,7 +133,7 @@ void toa(int *a, int *alen, int *b, int *blen)
 			}
 			else if (b[0] > i)
 			{
-				ft_putendl("pb");
+				ft_putendl("pa");
                 p(b,blen,a,alen);
 			}
 			else

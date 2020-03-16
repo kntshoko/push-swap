@@ -1,5 +1,34 @@
 #include "push_swap.h"
 
+
+int		ssort(int *arr, int len)
+{
+	int i;
+
+	i = 1;
+	while (i < len)
+	{
+		if (arr[i - 1] > arr[i])
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int	ft_cmp(const char *s1, const char *s2)
+{
+	size_t l;
+
+	l = 0;
+	while (s1[l] && (unsigned char)s1[l] == (unsigned char)s2[l])
+		l++;
+	if ((unsigned char)s1[l] > (unsigned char)s2[l])
+		return (-1);
+	else if ((unsigned char)s1[l] < (unsigned char)s2[l])
+		return (1);
+	return (0);
+}
+
 int wdct(char **str)
 {
         int i = 0;
@@ -42,7 +71,7 @@ char	*ft_joint(char *s1, char *s2, char *s3)
 	return ((char *)str);
 }
 
-int ok(char *str)
+int okay(char *str)
 {
         int i;
 
@@ -57,6 +86,43 @@ int ok(char *str)
         return 1;
 }
 
+int do_check(char **mv, int *a, int alen)
+{
+	int b[alen];
+	int blen;
+	int i;
+
+	i = 0;
+	blen = 0;
+	while(mv[i] != NULL)
+	{
+		if(ft_cmp(mv[i], "sa") == 0)
+		{
+			s(a,alen);	
+		}
+		else if(ft_cmp(mv[i],"sb") == 0)
+		{
+			s(b,blen);
+		}else if(ft_cmp(mv[i],"ra") == 0)
+		{
+			r(a,alen);
+		}else if(ft_cmp(mv[i], "rb") == 0)
+		{
+			r(b,blen);
+		}else if(ft_cmp(mv[i], "pa") == 0)
+		{
+			p(b,&blen,a,&alen);
+		}else if(ft_cmp(mv[i],"pb") == 0)
+		{
+			p(a,&alen,b,&blen);
+		}
+		i++;
+	}
+	if(ssort(a,alen) == 1)
+		return(1);
+	return(0);
+}
+
 
 int main(int c, char **v)
 {
@@ -64,30 +130,35 @@ int main(int c, char **v)
 	char *ins;
 	char *temp;
 	char **mv;
+	int *a;
+	int alen;
 
 	while(get_next_line(0,&str) == 1)
 	{
 		if(ins != NULL)
 		{
 			temp = ft_strdup(ins);
-			free(ins);
 			ins = ft_joint(temp,"  ",str);
 		}
 		else
 			ins = ft_strdup(str);
 	}
 		mv = ft_strsplit(ins,' ');
+	alen = wdct(ft_strsplit(v[1], ' '));
+	a = cnv(ft_strsplit(v[1],' '),alen);
 	if (c > 1)
 	{
-		if(ok(v[1]) == 1)
+		if(okay(v[1]) == 1)
 		{
-			int i = 0;
 			if(mv)
 			{
-				while ( mv[i] != NULL)
+				if(do_check(mv,a,alen) == 1)
 				{
-					ft_putendl(mv[i]);
-					i++;
+					ft_putendl("ok");
+				}
+				else
+				{
+					ft_putendl("ko");
 				}
 			}	
 		}
@@ -95,6 +166,13 @@ int main(int c, char **v)
 		{
 			ft_putendl("error");
 		}
-	}	
+	}
+	int i = 0;
+	while (i < alen)
+	{
+		ft_putnbr(a[i]);
+		ft_putstr(" ");
+		i++;
+	}
 	return(0);
 }
