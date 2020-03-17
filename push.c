@@ -43,7 +43,9 @@ static int	mdb(int *arr, int len)
 
 int mid(int m, int *a, int alen)
 {
-	int i = 0;
+	int i;
+
+	i = 0;
 	while (i < alen)
 	{
 		if (a[i] < m)
@@ -55,7 +57,9 @@ int mid(int m, int *a, int alen)
 
 int midb(int m, int *b, int blen)
 {
-	int i = 0;
+	int i;
+
+	 i = 0;
 	while (i < blen)
 	{
 		if (b[i] > m)
@@ -71,7 +75,7 @@ void backtoa(int *a, int *alen, int *b, int *blen)
 	{
 		place(mx(b,*blen),b,*blen);
 		ft_putendl("pa");
-        p(b,blen,a,alen);
+        	p(b,blen,a,alen);
 	}
 }
 
@@ -92,7 +96,7 @@ void tob(int *a, int *alen, int *b, int *blen)
 			else if (a[0] < i)
 			{
 				ft_putendl("pb");
-                p(a,alen,b,blen);
+                		p(a,alen,b,blen);
 			}
 			else
 			{
@@ -134,7 +138,7 @@ void toa(int *a, int *alen, int *b, int *blen)
 			else if (b[0] > i)
 			{
 				ft_putendl("pa");
-                p(b,blen,a,alen);
+                		p(b,blen,a,alen);
 			}
 			else
 			{
@@ -149,15 +153,16 @@ void toa(int *a, int *alen, int *b, int *blen)
 void	sortless(int *a,int alen)
 {
 	int b[alen];
-	int blen = 0;
-	
+	int blen;
+
+	blen = 0;
 	tob(a,&alen,b,&blen);
 	backtoa(a,&alen,b,&blen);
 	while(blen > 0)
 	{
 		place(mx(b,blen),b,blen);
 		ft_putendl("pa");
-        p(b,&blen,a,&alen);
+        	p(b,&blen,a,&alen);
 	}
 }
 
@@ -174,7 +179,7 @@ void	sortmore(int *a,int alen)
 	{
 		place(mx(b,blen),b,blen);
 		ft_putendl("pa");
-        p(b,&blen,a,&alen);
+        	p(b,&blen,a,&alen);
 	}
 }
 
@@ -230,13 +235,8 @@ int main(int c, char **v)
 		
 		alen =  wordcount(ft_strsplit(v[1], ' '));
 		a = convert(ft_strsplit(v[1], ' '), alen);
-//		if (alen <= 100)
-//			sortless(a,alen);
-//		else
-			sortmore(a,alen);
+		sortmore(a,alen);
 	}
-//	int i = 0;
-//	while (i < alen){ft_putnbr(a[i]); ft_putchar(' ');i++;}
 	free(a);
 	return (0);
 }
