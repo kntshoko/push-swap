@@ -100,10 +100,10 @@ int do_check(char **mv, int *a, int alen)
 		{
 			s(a,alen);	
 		}
-		else if(ft_cmp(mv[i],"sb") == 0)
+		else if(ft_cmp(mv[i], "sb") == 0)
 		{
 			s(b,blen);
-		}else if(ft_cmp(mv[i],"ra") == 0)
+		}else if(ft_cmp(mv[i], "ra") == 0)
 		{
 			r(a,alen);
 		}else if(ft_cmp(mv[i], "rb") == 0)
@@ -115,10 +115,16 @@ int do_check(char **mv, int *a, int alen)
 		}else if(ft_cmp(mv[i],"pb") == 0)
 		{
 			p(a,&alen,b,&blen);
+		}else if(ft_cmp(mv[i], "rra") == 0)
+		{
+			rr(a,alen);
+		}else if(ft_cmp(mv[i], "rrb") == 0)
+		{
+			rr(b,blen);
 		}
 		i++;
 	}
-	if(ssort(a,alen) == 1)
+	if(ssort(a,alen) == 1 && blen == 0)
 		return(1);
 	return(0);
 }
@@ -174,5 +180,6 @@ int main(int c, char **v)
 		ft_putstr(" ");
 		i++;
 	}
+ft_putendl(" ");
 	return(0);
 }

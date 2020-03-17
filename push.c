@@ -169,6 +169,7 @@ void	sortmore(int *a,int alen)
 	tob(a,&alen,b,&blen);
 	toa(a,&alen,b,&blen);
 	backtoa(a,&alen,b,&blen);
+	tob(a,&alen,b,&blen);
 	while(blen > 0)
 	{
 		place(mx(b,blen),b,blen);
@@ -184,7 +185,7 @@ int okk(char *str)
 	i = 0;
 	while(str[i])
 	{	
-		if((str[i] == '-' || str[i] == ' ' || ft_isdigit(str[i]) == 1) && str[i] != '\0')
+		if((str[i] == ' ' || ft_isdigit(str[i]) == 1) && str[i] != '\0')
 			i++;
 		else
 			return(0);
@@ -229,11 +230,13 @@ int main(int c, char **v)
 		
 		alen =  wordcount(ft_strsplit(v[1], ' '));
 		a = convert(ft_strsplit(v[1], ' '), alen);
-		if (alen <= 100)
-			sortless(a,alen);
-		else
+//		if (alen <= 100)
+//			sortless(a,alen);
+//		else
 			sortmore(a,alen);
-	}	
+	}
+//	int i = 0;
+//	while (i < alen){ft_putnbr(a[i]); ft_putchar(' ');i++;}
 	free(a);
 	return (0);
 }

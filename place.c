@@ -48,12 +48,12 @@ void	place(int n, int *arr, int len)
 			ft_putendl("rb");
 		}
 	}
-	else
+	else if (rev(n,arr,len) > 0)
 	{
 		while (arr[0] != n)
 		{
 			rr(arr,len);
-			ft_putendl("rrb");
+			ft_putendl("rrb2");
 		}
 	}
 }
