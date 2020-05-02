@@ -1,20 +1,5 @@
 #include "push_swap.h"
 
-
-int		ssort(int *arr, int len)
-{
-	int i;
-
-	i = 1;
-	while (i < len)
-	{
-		if (arr[i - 1] > arr[i])
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
 //ft_cmp and ft_joint must be in th libft clen that up also
 
 int	ft_cmp(const char *s1, const char *s2)
@@ -73,7 +58,7 @@ int do_check(char **mv, int *a, int alen, int blen)
 		else if(ft_cmp(mv[i], "rrb") == 0)
 			rr(b,blen);
 	}
-	if(ssort(a,alen) == 1 && blen == 0)
+	if(sort(a,alen) == 1 && blen == 0)
 		return(1);
 	return(0);
 }
