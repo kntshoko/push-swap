@@ -15,6 +15,8 @@ int		ssort(int *arr, int len)
 	return (1);
 }
 
+//ft_cmp and ft_joint must be in th libft clen that up also
+
 int	ft_cmp(const char *s1, const char *s2)
 {
 	size_t l;
@@ -43,16 +45,16 @@ char	*ft_joint(char *s1, char *s2, char *s3)
 	return ((char *)str);
 }
 
+//include a new void function for the while loop below, to make the funion do_check hove less lines of code
+//
 
-int do_check(char **mv, int *a, int alen)
+int do_check(char **mv, int *a, int alen, int blen)
 {
 	int b[alen];
-	int blen;
 	int i;
 
-	i = 0;
-	blen = 0;
-	while(mv[i] != NULL)
+	i = -1;
+	while(mv[++i] != NULL)
 	{
 		if(ft_cmp(mv[i], "sa") == 0)
 			s(a,alen);	
@@ -70,7 +72,6 @@ int do_check(char **mv, int *a, int alen)
 			rr(a,alen);
 		else if(ft_cmp(mv[i], "rrb") == 0)
 			rr(b,blen);
-		i++;
 	}
 	if(ssort(a,alen) == 1 && blen == 0)
 		return(1);
@@ -97,6 +98,8 @@ char *get_mv(int fd)
 	return (ins);
 }
 
+// the main currently has more than 25 lines of code, clean it up !
+
 int main(int c, char **v)
 {
 	char *ins;
@@ -107,14 +110,14 @@ int main(int c, char **v)
 	ins = get_mv(0);
 	mv = ft_strsplit(ins, ' ');
 	alen = wordcount(ft_strsplit(v[1], ' '));
-	a = convet(ft_strsplit(v[1], ' '),alen);
+	a = convert(ft_strsplit(v[1], ' '),alen);
 	if (c > 1)
 	{
 		if(ok(v[1]) == 1)
 		{
 			if(mv)
 			{
-				if(do_check(mv,a,alen) == 1)
+				if(do_check(mv,a,alen,0) == 1)
 					ft_putendl("ok");
 				else
 					ft_putendl("ko");
@@ -124,5 +127,6 @@ int main(int c, char **v)
 			ft_putendl("error");
 	}
 	ft_strdel(&ins);
+	free(a);
 	return(0);
 }
