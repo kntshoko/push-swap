@@ -101,6 +101,7 @@ int	md(int *arr, int len)
 	return (temp);
 }
 
+// the function ok is not done, it still has to consider the different ways of in put like: 1. [./push-swap "1 2 3"] and 2. [./push-swap 1 2 3]
 int ok(char *str)
 {
         int i;
