@@ -57,3 +57,29 @@ void	place(int n, int *arr, int len)
 		}
 	}
 }
+
+int wordcount(char **str)
+{
+	int i = 0;
+
+	while(str[i] != NULL)
+		i++;
+	free(str);
+	return(i);
+}
+
+int *convert(char **str, int len)
+{
+	int i;
+	int *a;
+
+	a = (int *)malloc(sizeof(int)*(len));
+	i = 0;
+	while(str[i] != NULL)
+	{
+		a[i] = ft_atoi(str[i]);
+		i++;
+	}
+	free(str);
+	return (a);
+}
