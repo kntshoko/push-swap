@@ -237,6 +237,14 @@ int main(int c, char **v)
 		a = convert(ft_strsplit(v[1], ' '), alen);
 		sortmore(a,alen);
 	}
+	alen =  wordcount(ft_strsplit(v[1], ' '));
+	int i = 0;
+	while (i < alen)
+	{
+		printf(" %d", a[i]);
+		i++;
+	}
+
 	free(a);
 	return (0);
 }

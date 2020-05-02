@@ -28,7 +28,7 @@ OBJ =	math.o\
 		moves.o\
 		place.o\
 
-# all: $(NAME)
+# all: $(NAME) $(NAME2)
 
 $(NAME):
 		$(CC) $(FLAG) -c $(SRC)
@@ -40,8 +40,7 @@ $(NAME):
 		$(CC) $(FLAG) -o $(EXE2) $(MAIN2) $(LIB) $(NAME2) 
 
 all: $(NAME)
-	$(NAME2)
-
+	
 clean:
 		rm -f $(OBJ)
 

@@ -53,7 +53,7 @@ void	place(int n, int *arr, int len)
 		while (arr[0] != n)
 		{
 			rr(arr,len);
-			ft_putendl("rrb2");
+			ft_putendl("rrb");
 		}
 	}
 }
