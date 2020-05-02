@@ -29,5 +29,6 @@ int	sort(int *arr, int len);
 int	target(int n, int *arr, int len);
 int	*convert(char **str, int len);
 int	wordcount(char **str);
+int ok(char *str);
 
 #endif
