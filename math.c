@@ -12,22 +12,6 @@
 
 #include "push_swap.h"
 
-/*int ok(char *str)
-{
-        int i;
-
-        i = 0;
-        while(str[i])
-        {
-                if((str[i] == '-' || str[i] == ' ' || ft_isdigit(str[i]) == 1) && str[i] != '\0')
-                        i++;
-                else
-                        return(0);
-        }
-        return 1;
-}
-*/
-
 int		mx(int *arr, int len)
 {
 	int t;
@@ -131,4 +115,3 @@ int ok(char *str)
         }
         return 1;
 }
-
