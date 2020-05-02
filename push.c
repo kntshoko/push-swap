@@ -149,23 +149,6 @@ void toa(int *a, int *alen, int *b, int *blen)
 	}
 }
 
-
-void	sortless(int *a,int alen)
-{
-	int b[alen];
-	int blen;
-
-	blen = 0;
-	tob(a,&alen,b,&blen);
-	backtoa(a,&alen,b,&blen);
-	while(blen > 0)
-	{
-		place(mx(b,blen),b,blen);
-		ft_putendl("pa");
-        	p(b,&blen,a,&alen);
-	}
-}
-
 void	sortmore(int *a,int alen)
 {
 	int b[alen];
@@ -183,46 +166,7 @@ void	sortmore(int *a,int alen)
 	}
 }
 
-int okk(char *str)
-{
-	int i;
 
-	i = 0;
-	while(str[i])
-	{	
-		if((str[i] == ' ' || ft_isdigit(str[i]) == 1) && str[i] != '\0')
-			i++;
-		else
-			return(0);
-	}
-	return 1;
-}
-
-int wordcount(char **str)
-{
-	int i = 0;
-
-	while(str[i] != NULL)
-		i++;
-	free(str);
-	return(i);
-}
-
-int *convert(char **str, int len)
-{
-	int i;
-	int *a;
-
-	a = (int *)malloc(sizeof(int)*(len));
-	i = 0;
-	while(str[i] != NULL)
-	{
-		a[i] = ft_atoi(str[i]);
-		i++;
-	}
-	free(str);
-	return (a);
-}
 
 int main(int c, char **v)
 {
@@ -230,7 +174,7 @@ int main(int c, char **v)
 	int alen ;
 
 	a = NULL;
-	if ( c > 1 && okk(v[1]) == 1)
+	if ( c > 1 && ok(v[1]) == 1)
 	{
 		
 		alen =  wordcount(ft_strsplit(v[1], ' '));
