@@ -29,34 +29,6 @@ int	ft_cmp(const char *s1, const char *s2)
 	return (0);
 }
 
-int wdct(char **str)
-{
-        int i = 0;
-
-        while(str[i] != NULL)
-                i++;
-        free(str);
-        return(i);
-}
-
-int *cnv(char **str, int len)
-{
-        int i;
-        int *a;
-
-        a = (int *)malloc(sizeof(int)*(len));
-        i = 0;
-        while(str[i] != NULL)
-        {
-                a[i] = ft_atoi(str[i]);
-                i++;
-        }
-        free(str);
-        return (a);
-}
-
-
-
 char	*ft_joint(char *s1, char *s2, char *s3)
 {
 	char	*str;
@@ -71,20 +43,6 @@ char	*ft_joint(char *s1, char *s2, char *s3)
 	return ((char *)str);
 }
 
-int okay(char *str)
-{
-        int i;
-
-        i = 0;
-        while(str[i])
-        {
-                if((str[i] == '-' || str[i] == ' ' || ft_isdigit(str[i]) == 1) && str[i] != '\0')
-                        i++;
-                else
-                        return(0);
-        }
-        return 1;
-}
 
 int do_check(char **mv, int *a, int alen)
 {
@@ -148,11 +106,11 @@ int main(int c, char **v)
 
 	ins = get_mv(0);
 	mv = ft_strsplit(ins, ' ');
-	alen = wdct(ft_strsplit(v[1], ' '));
-	a = cnv(ft_strsplit(v[1], ' '),alen);
+	alen = wordcount(ft_strsplit(v[1], ' '));
+	a = convet(ft_strsplit(v[1], ' '),alen);
 	if (c > 1)
 	{
-		if(okay(v[1]) == 1)
+		if(ok(v[1]) == 1)
 		{
 			if(mv)
 			{
