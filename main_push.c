@@ -6,14 +6,18 @@ int main(int c, char **v)
 	int alen;
 	char **str;
 
+	str = NULL;
 	a = NULL;
-	if(c > 1 && (str = ok(v)) != NULL)
+	if(c > 1)
 	{
-		alen = wordcount(str);
-		a = convert(str, ' ');
-		sortting(a, alen);
+		if((str = ok(v)) != NULL)
+		{
+			alen = wordcount(str);
+			a = convert(str, ' ');
+			sortting(a, alen);
+			free(a);
+			free(str);
+		}
 	}
-	free(a);
-	free(str);
 	return(0);
 }

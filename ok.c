@@ -27,6 +27,7 @@ static char **st(char *s)
 	int i;
 	char **str;
 
+	str = NULL;
 	i = 0;
 	while(s[i])
 	{
@@ -72,6 +73,7 @@ char **ok(char **s)
 	char **str;
 	int i;
 
+	str = NULL;
 	i = 1;
 	while(s[i][0] != '-' && s[i] != NULL)
 		i++;
@@ -81,5 +83,5 @@ char **ok(char **s)
 		str = ar(s, i);
 	if (str != NULL)
 		return(str);
-	return(NULL);
+	return(str);
 }
