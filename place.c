@@ -39,13 +39,8 @@ void place(int n, int *arr, int len)
 	{
 		while(arr[0] != n)
 		{
-<<<<<<< HEAD
 			ft_putendl("rrb");
-			rr(arr, len);
-=======
 			rr(arr,len);
-			ft_putendl("rrb");
->>>>>>> 00f9f2c9235cfb3bb9d0514325fc82465331e99b
 		}
 	}
 }
