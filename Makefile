@@ -53,7 +53,7 @@ OBJ =	moves.o\
 	sortting.o\
 	tools.o
 
-# all: $(NAME)
+# all: $(NAME) $(NAME2)
 
 $(NAME):
 		cd libft &&  $(MAKE) re 
@@ -66,8 +66,7 @@ $(NAME):
 		$(CC) $(FLAG) -o $(EXE2) $(MAIN2) libft/libft.a $(NAME2)
 
 all: $(NAME)
-	$(NAME2)
-
+	
 clean:
 		rm -f $(OBJ)
 

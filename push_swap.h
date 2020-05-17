@@ -41,6 +41,7 @@ void	 sortting(int *a, int alen);
 
 int	wordcount(char **s);
 int	*convert(char **str, int len);
+<<<<<<< HEAD
 char	**ok(char **s);
 
 int	mid_a(int i, int *a, int len);
@@ -49,5 +50,9 @@ int	mid_b(int i, int *a, int len);
 int	ft_cmp(const char *s1, const char *s2);
 char	*ft_joint(char *s1, char *s2, char *s3);
 
+=======
+int	wordcount(char **str);
+int ok(char *str);
+>>>>>>> 00f9f2c9235cfb3bb9d0514325fc82465331e99b
 
 #endif

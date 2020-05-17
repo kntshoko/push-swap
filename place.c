@@ -39,8 +39,39 @@ void place(int n, int *arr, int len)
 	{
 		while(arr[0] != n)
 		{
+<<<<<<< HEAD
 			ft_putendl("rrb");
 			rr(arr, len);
+=======
+			rr(arr,len);
+			ft_putendl("rrb");
+>>>>>>> 00f9f2c9235cfb3bb9d0514325fc82465331e99b
 		}
 	}
+}
+
+int wordcount(char **str)
+{
+	int i = 0;
+
+	while(str[i] != NULL)
+		i++;
+	free(str);
+	return(i);
+}
+
+int *convert(char **str, int len)
+{
+	int i;
+	int *a;
+
+	a = (int *)malloc(sizeof(int)*(len));
+	i = 0;
+	while(str[i] != NULL)
+	{
+		a[i] = ft_atoi(str[i]);
+		i++;
+	}
+	free(str);
+	return (a);
 }
