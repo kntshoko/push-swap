@@ -13,7 +13,9 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+
 # include "libft/libft.h"
+# include <stdio.h>
 
 void	s(int *a, int len);
 void	p(int *a, int *alen, int *b, int *blen);
@@ -32,12 +34,12 @@ int	rot(int n, int *arr, int len);
 int	max(int *arr, int len);
 int	min(int *arr, int len);
 int	target(int n, int *arr, int len);
-void	 sortting(int *a, int alen);
+void	sortting(int *a, int alen);
 int	wordcount(char **s);
 int	*convert(char **str, int len);
 char	**ok(char **s);
 int	mid_a(int i, int *a, int len);
-int	mid_b(int i, int *a, int len);
+int	mid_b(int i, int *b, int len);
 int	ft_cmp(const char *s1, const char *s2);
 char	*ft_joint(char *s1, char *s2, char *s3);
 int	wordcount(char **str);

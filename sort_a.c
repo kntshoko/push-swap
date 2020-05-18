@@ -7,9 +7,9 @@ int sort_a(int *arr, int len)
 	i = 1;
 	while(i < len)
 	{
-		if(arr[i - 1] >arr[i])
+		if(arr[i - 1] > arr[i])
 			return(0);
 		i++;
 	}
-	return(0);
+	return(1);
 }

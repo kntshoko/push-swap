@@ -10,14 +10,20 @@ int main(int c, char **v)
 	a = NULL;
 	if(c > 1)
 	{
-		if((str = ok(v)) != NULL)
+		str = ok(v); 
+		if(str!= NULL)
 		{
 			alen = wordcount(str);
+printf (" main_push");
 			a = convert(str, ' ');
 			sortting(a, alen);
-			free(a);
+		//	free(a);
 			free(str);
 		}
 	}
+int i = -1;
+while(a[++i])
+printf (" %d", a[i]);
+printf (" \n");
 	return(0);
 }

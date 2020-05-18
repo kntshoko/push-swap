@@ -7,7 +7,7 @@ int median_b(int *arr, int len)
 	int i;
 	int j;
 
-	a = malloc(len*sizeof(int));
+	a =(int *)malloc(len*sizeof(int));
 	ft_memcpy(a, arr, len);
 	i = -1;
 	while(++i < len)
@@ -24,6 +24,6 @@ int median_b(int *arr, int len)
 		}
 	}
 	temp = a[len/2];
-	free(a);
+//	free(a);
 	return(temp);
 }

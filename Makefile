@@ -11,9 +11,9 @@
 # **************************************************************************** #
 
 NAME = push_swap.a
-NAME2 = checker.a
 EXE = push_swap
 EXE2 = checker
+LIB = libft/libft.a
 MAIN = main_push.c
 MAIN2 = main_checker.c
 CC = gcc
@@ -34,7 +34,9 @@ SRC =	moves.c\
 	sort_b.c\
 	push_to_a.c\
 	sortting.c\
-	tools.c
+	tools.c\
+	mid_b.c\
+	mid_a.c\
 
 OBJ =	moves.o\
 	place.o\
@@ -51,27 +53,28 @@ OBJ =	moves.o\
 	sort_b.o\
 	push_to_a.o\
 	sortting.o\
-	tools.o
+	tools.o\
+	mid_a.o\
+	mid_b.o\
 
-# all: $(NAME) $(NAME2)
+all: $(NAME)
 
 $(NAME):
 		cd libft &&  $(MAKE) re 
 		$(CC) $(FLAG) -c $(SRC)
 		$(ARC) $(NAME) $(OBJ)
 		ranlib $(NAME)
-		$(CC) $(FLAG) -o $(EXE) $(MAIN) libft/libft.a $(NAME)
-		$(ARC) $(NAME2) $(OBJ) 
-		ranlib $(NAME2)
-		$(CC) $(FLAG) -o $(EXE2) $(MAIN2) libft/libft.a $(NAME2)
+		$(CC) $(FLAG) -o $(EXE) $(MAIN) $(NAME) $(LIB)
+		$(CC) $(FLAG) -o $(EXE2) $(MAIN2) $(NAME) $(LIB)
 
 all: $(NAME)
 	
 clean:
-		rm -f $(OBJ)
+		rm -f $(OBJ)	
+		cd libft &&  $(MAKE) clean 
 
 fclean: clean
 		rm -f $(NAME) $(EXE)
 		rm -f $(NAME2) $(EXE2)
-
+		cd libft &&  $(MAKE) fclean 
 re: fclean all

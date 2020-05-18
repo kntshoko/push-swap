@@ -65,7 +65,7 @@ int main(int c, char **v)
 	mv = ft_strsplit(ins, ' ');
 	if (c > 1)
 	{
-		if(str = ok(v) != NULL)
+		if((str = ok(v)) != NULL)
 		{
 			alen = wordcount(str);
 			a = convert(str, alen);

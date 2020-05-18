@@ -11,10 +11,9 @@ static int match(char **s)
 		j = 0;
 		while(s[j] != NULL)
 		{
-			if (i == j)
-				j++;
-			if(ft_cmp(s[i], s[j]) == 0)
-				return(1);
+			if(j != i)
+				if(ft_cmp(s[i], s[j]) == 0)
+					return(1);
 			j++;
 		}
 		i++;
@@ -29,14 +28,10 @@ static char **st(char *s)
 
 	str = NULL;
 	i = 0;
-	while(s[i])
-	{
-		if((ft_isdigit(s[i]) == 1 || s[i] == ' ')
-		&& s[i] != '\0')
-			i++;
-		else
-			return(NULL);
-	}
+	while(s[i] != '\0' && (ft_isdigit(s[i]) == 1 || s[i] == ' '))
+		i++;;
+	if(s[i] != '\0')
+		return(NULL);
 	str = ft_strsplit(s, ' ');
 	if (match(str) == 1)
 	{
@@ -75,11 +70,11 @@ char **ok(char **s)
 
 	str = NULL;
 	i = 1;
-	while(s[i][0] != '-' && s[i] != NULL)
+	while(s[i] != NULL && s[i][0] != '-')
 		i++;
 	if(i == 2)
 		str = st(s[1]);
-	else if (i > 2)
+	 if (i > 2)
 		str = ar(s, i);
 	if (str != NULL)
 		return(str);
