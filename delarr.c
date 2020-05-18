@@ -2,12 +2,12 @@
 
 void delarr(char **str)
 {
-	char *temp;
+	char **temp;
 
-	temp = *str;
-	while(temp != NULL)
+	temp = str;
+	while(*temp != NULL)
 	{
-		free(temp);
+		free(*temp);
 		temp++;
 	}
 	free(str);

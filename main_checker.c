@@ -96,22 +96,29 @@ int main(int c, char **v)
 		{
 			alen = wordcount(str);
 			a = convert(str, alen);
-			if(mv && (check_moves(mv)) == 1)
+			if(mv)
 			{
-				if(do_check(mv,a,alen) == 1)
-					ft_putendl("ok");
+				if((check_moves(mv)) == 1)
+				{
+					if(do_check(mv,a,alen) == 1)
+						ft_putendl("OK");
+					else
+						ft_putendl("KO");
+				}
 				else
-					ft_putendl("ko");
+					ft_putendl("Error");
 			}
-			else
-				ft_putendl("error");
-//			free(a);
+			else if(sort_a(a,alen) == 1)
+				ft_putendl("OK");
+			else 
+				ft_putendl("KO");
+			free(a);
 		}
 		else
-			ft_putendl("error");
+			ft_putendl("Error");
 	}
-//	ft_strdel(&ins);
-//	delarr(str);
-//	delarr(mv);
+	ft_strdel(&ins);
+	delarr(str);
+	delarr(mv);
 	return(0);
 }
