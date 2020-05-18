@@ -1,6 +1,18 @@
 #include "push_swap.h"
 
-int do_check(char **mv, int *a, int alen)
+static int check_moves(char **mv)
+{
+	int i;
+
+	i = 0;
+	while(mv[i] != NULL && ((ft_cmp(mv[i], "sa")) == 0 || (ft_cmp(mv[i], "sb")) == 0 || (ft_cmp(mv[i], "pa")) == 0 || (ft_cmp(mv[i], "pb")) == 0 || (ft_cmp(mv[i], "ra")) == 0 || (ft_cmp(mv[i], "rb")) == 0 || (ft_cmp(mv[i], "rrb")) == 0 || (ft_cmp(mv[i], "rra")) == 0 || (ft_cmp(mv[i], "ss")) == 0 || (ft_cmp(mv[i], "rr")) == 0 || (ft_cmp(mv[i], "rrr")) == 0))
+		i++;
+	if(mv[i] != NULL)
+		return(0);
+	return(1);
+}
+
+static int do_check(char **mv, int *a, int alen)
 {
 	int b[alen];
 	int blen;
@@ -26,6 +38,21 @@ int do_check(char **mv, int *a, int alen)
 			rr(a,alen);
 		else if(ft_cmp(mv[i], "rrb") == 0)
 			rr(b,blen);
+		else if(ft_cmp(mv[i], "rrr") == 0)
+		{
+			r(b,blen);
+			r(a,alen);
+		}
+		else if(ft_cmp(mv[i], "ss") == 0)
+		{
+			rr(b,blen);
+			rr(a,alen);
+		}
+		else if(ft_cmp(mv[i], "rr") == 0)
+		{
+			r(b,blen);
+			r(a,alen);
+		}
 		i++;
 	}
 	if(sort_a(a,alen) == 1 && blen == 0)
@@ -69,18 +96,22 @@ int main(int c, char **v)
 		{
 			alen = wordcount(str);
 			a = convert(str, alen);
-			if(mv)
+			if(mv && (check_moves(mv)) == 1)
 			{
 				if(do_check(mv,a,alen) == 1)
 					ft_putendl("ok");
 				else
 					ft_putendl("ko");
-			}	
+			}
+			else
+				ft_putendl("error");
+//			free(a);
 		}
 		else
 			ft_putendl("error");
 	}
 //	ft_strdel(&ins);
-//	ft_strdel(str);
+//	delarr(str);
+//	delarr(mv);
 	return(0);
 }

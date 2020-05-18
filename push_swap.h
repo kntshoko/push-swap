@@ -44,5 +44,6 @@ int	ft_cmp(const char *s1, const char *s2);
 char	*ft_joint(char *s1, char *s2, char *s3);
 int	wordcount(char **str);
 char    **ok(char **str);
+void	delarr(char **str);
 
 #endif

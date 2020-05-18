@@ -37,6 +37,7 @@ SRC =	moves.c\
 	tools.c\
 	mid_b.c\
 	mid_a.c\
+	delarr.c\
 
 OBJ =	moves.o\
 	place.o\
@@ -56,6 +57,7 @@ OBJ =	moves.o\
 	tools.o\
 	mid_a.o\
 	mid_b.o\
+	delarr.o\
 
 all: $(NAME)
 

@@ -16,8 +16,8 @@ int main(int c, char **v)
 			alen = wordcount(str);
 			a = convert(str, ' ');
 			sortting(a, alen);
-		//	free(a);
-	//		free(str);
+//			free(a);
+//			delarr(str);
 		}
 	}
 	return(0);
