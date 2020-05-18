@@ -14,6 +14,8 @@ static int match(char **s)
 			if(j != i)
 				if(ft_cmp(s[i], s[j]) == 0)
 					return(1);
+			if(ft_strlen(s[i]) > 1 && (ft_atoi(s[i])) == 1)
+				return(1);
 			j++;
 		}
 		i++;

@@ -117,8 +117,11 @@ int main(int c, char **v)
 		else
 			ft_putendl("Error");
 	}
-	ft_strdel(&ins);
-	delarr(str);
-	delarr(mv);
+	if(ins)
+		ft_strdel(&ins);
+	if(str)
+		delarr(str);
+	if(mv)
+		delarr(mv);
 	return(0);
 }
