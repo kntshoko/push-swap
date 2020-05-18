@@ -4,7 +4,7 @@ int rev(int n, int *arr, int len)
 {
 	int c;
 
-	c= 0;
+	c = 0;
 	while(--len && arr[len] != n)
 		c++;
 	return(c);

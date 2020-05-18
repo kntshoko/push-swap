@@ -2,28 +2,26 @@
 
 int median_b(int *arr, int len)
 {
-	int *a;
+	int ar[len];
 	int temp;
 	int i;
 	int j;
 
-	a =(int *)malloc(len*sizeof(int));
-	ft_memcpy(a, arr, len);
+	ft_memcpy(ar, arr, len);
 	i = -1;
 	while(++i < len)
 	{
 		j = -1;
 		while(++j < len)
 		{
-			if(a[i] > a[j])
+			if(ar[i] > ar[j])
 			{
-				temp = a[i];
-				a[i] = a[j];
-				a[j] = temp;
+				temp = ar[i];
+				ar[i] = ar[j];
+				ar[j] = temp;
 			}
 		}
 	}
-	temp = a[len/2];
-//	free(a);
+	temp = ar[len/2];
 	return(temp);
 }

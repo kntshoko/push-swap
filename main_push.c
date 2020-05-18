@@ -14,16 +14,11 @@ int main(int c, char **v)
 		if(str!= NULL)
 		{
 			alen = wordcount(str);
-printf (" main_push");
 			a = convert(str, ' ');
 			sortting(a, alen);
 		//	free(a);
-			free(str);
+	//		free(str);
 		}
 	}
-int i = -1;
-while(a[++i])
-printf (" %d", a[i]);
-printf (" \n");
 	return(0);
 }

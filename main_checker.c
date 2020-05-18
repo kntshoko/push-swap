@@ -80,7 +80,7 @@ int main(int c, char **v)
 		else
 			ft_putendl("error");
 	}
-	ft_strdel(&ins);
-	ft_strdel(str);
+//	ft_strdel(&ins);
+//	ft_strdel(str);
 	return(0);
 }
