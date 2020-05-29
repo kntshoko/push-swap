@@ -23,10 +23,6 @@ void push_to_a(int *a, int *alen, int *b, int *blen)
 				ft_putendl("rb");
 				r(b, *blen);
 			}
-			if(sort_a(a, *alen) == 1)
-				push_to_b(a,alen,b,blen);
 		}
-			if(sort_a(a, *alen) == 1)
-				push_to_b(a,alen,b,blen);
 	}
 }

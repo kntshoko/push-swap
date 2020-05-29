@@ -21,14 +21,9 @@ void push_to_b(int *a, int *alen, int *b, int *blen)
 			}
 			else
 			{
-				ft_putendl("rra");
-				rr(a, *alen);
+				ft_putendl("ra");
+				r(a, *alen);
 			}
-		if(*blen > 1 && sort_b(a, *alen) == 1)
-			push_to_a(a,alen,b,blen);
-
 		}
-		if(*blen > 1 && sort_b(a, *alen) == 1)
-			push_to_a(a,alen,b,blen);
 	}
 }
