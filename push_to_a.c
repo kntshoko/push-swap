@@ -20,8 +20,8 @@ void push_to_a(int *a, int *alen, int *b, int *blen)
 			}
 			else
 			{
-				ft_putendl("rb");
-				r(b, *blen);
+				ft_putendl("rrb");
+				rr(b, *blen);
 			}
 		}
 	}
