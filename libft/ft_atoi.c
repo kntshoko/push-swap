@@ -33,9 +33,9 @@ int	ft_atoi(const char *str)
 		l++;
 	}
 	result = result * neg;
-	if (result == 469762049)
-		result = 0;
-	if (result == -469762049)
-		result = -1;
+//	if (result == 469762049)
+//		result = 0;
+//	if (result == -469762049)
+//		result = -1;
 	return (result);
 }

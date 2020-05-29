@@ -4,6 +4,7 @@ static int match(char **s)
 {
 	int i;
 	int j;
+	long in;
 
 	i = 0;
 	while(s[i] != NULL)
@@ -14,7 +15,8 @@ static int match(char **s)
 			if(j != i)
 				if(ft_cmp(s[i], s[j]) == 0)
 					return(1);
-			if(ft_strlen(s[i]) > 1 && (ft_atoi(s[i])) == 1)
+			in = ft_atoi(s[i]);
+			if(in > 2147283647)
 				return(1);
 			j++;
 		}

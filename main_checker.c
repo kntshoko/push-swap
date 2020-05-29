@@ -28,19 +28,22 @@ int main(int c, char **v)
 				}
 				else
 					ft_putendl("Error");
+			free(a);
 			}
 			else if(sort_a(a,alen) == 1)
+			{
 				ft_putendl("OK");
+				free(a);
+			}
 			else 
 				ft_putendl("KO");
-			free(a);
 		}
 		else
 			ft_putendl("Error");
 	}
 	if(!ins)
 		ft_strdel(&ins);
-	if(!str)
+	if(str)
 		delarr(str);
 	return(0);
 }
