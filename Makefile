@@ -38,6 +38,9 @@ SRC =	moves.c\
 	mid_b.c\
 	mid_a.c\
 	delarr.c\
+	get_mv.c\
+	check_moves.c\
+	do_check.c
 
 OBJ =	moves.o\
 	place.o\
@@ -58,6 +61,10 @@ OBJ =	moves.o\
 	mid_a.o\
 	mid_b.o\
 	delarr.o\
+	get_mv.o\
+        check_moves.o\
+        do_check.o
+
 
 all: $(NAME)
 

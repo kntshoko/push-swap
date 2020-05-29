@@ -7,7 +7,7 @@ int median_b(int *arr, int len)
 	int i;
 	int j;
 
-	ft_memcpy(ar, arr, len);
+	ft_memcpy(ar, arr, len*sizeof(int));
 	i = -1;
 	while(++i < len)
 	{

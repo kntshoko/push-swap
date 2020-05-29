@@ -45,5 +45,10 @@ char	*ft_joint(char *s1, char *s2, char *s3);
 int	wordcount(char **str);
 char    **ok(char **str);
 void	delarr(char **str);
+int	do_check(char **mv, int *a, int alen);
+int	check_moves(char **mv);
+char	*get_mv(int fd);
+
+
 
 #endif

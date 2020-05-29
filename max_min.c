@@ -22,7 +22,7 @@ int min(int *arr, int len)
 
 	i = 0;
 	t = arr[0];
-	while(i < len)
+	while(++i < len)
 	{
 		if(arr[i] < t)
 			t = arr[i];
