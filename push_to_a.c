@@ -6,7 +6,7 @@ void push_to_a(int *a, int *alen, int *b, int *blen)
 	while(sort_b(b, *blen) != 1)
 	{
 		i = median_b(b, *blen);
-		while(sort_b(b, *blen) != 1 && mid_b(i, b, *blen) != 1)
+		while(sort_b(b, *blen) != 1 && mid_b(i, b, *blen) != 1 )
 		{
 			if(b[0] < b[1])
 			{
@@ -20,9 +20,13 @@ void push_to_a(int *a, int *alen, int *b, int *blen)
 			}
 			else
 			{
-				ft_putendl("rrb");
-				rr(b, *blen);
+				ft_putendl("rb");
+				r(b, *blen);
 			}
+			if(sort_a(a, *alen) == 1)
+				push_to_b(a,alen,b,blen);
 		}
+			if(sort_a(a, *alen) == 1)
+				push_to_b(a,alen,b,blen);
 	}
 }
