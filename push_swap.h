@@ -48,7 +48,7 @@ void	delarr(char **str);
 int	do_check(char **mv, int *a, int alen);
 int	check_moves(char **mv);
 char	*get_mv(int fd);
-
-
+void	sort_three(int *a, int alen);
+void	sort_five(int *a, int alen);
 
 #endif

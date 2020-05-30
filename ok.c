@@ -32,7 +32,7 @@ static char **st(char *s)
 
 	str = NULL;
 	i = 0;
-	while(s[i] != '\0' && (ft_isdigit(s[i]) == 1 || s[i] == ' '))
+	while(s[i] != '\0' && (ft_isdigit(s[i]) == 1 || s[i] == ' '|| s[i] == '-'))
 		i++;;
 	if(s[i] != '\0')
 		return(NULL);
@@ -74,7 +74,7 @@ char **ok(char **s)
 
 	str = NULL;
 	i = 1;
-	while(s[i] != NULL && s[i][0] != '-')
+	while(s[i] != NULL)
 		i++;
 	if(i == 2)
 		str = st(s[1]);

@@ -11,7 +11,9 @@ char *get_mv(int fd)
 		if(ins != NULL)
 		{
 			temp = ft_strdup(ins);
+			ft_strdel(&ins);
 			ins = ft_joint(temp,"  ",str);
+			ft_strdel(&str);
 			ft_strdel(&temp);
 		}
 		else

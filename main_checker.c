@@ -41,8 +41,7 @@ int main(int c, char **v)
 		else
 			ft_putendl("Error");
 	}
-	if(!ins)
-		ft_strdel(&ins);
+	ft_strdel(&ins);
 	if(str)
 		delarr(str);
 	return(0);

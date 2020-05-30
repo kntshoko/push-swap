@@ -40,7 +40,9 @@ SRC =	moves.c\
 	delarr.c\
 	get_mv.c\
 	check_moves.c\
-	do_check.c
+	do_check.c\
+	sort_three.c\
+	sort_five.c
 
 OBJ =	moves.o\
 	place.o\
@@ -63,7 +65,10 @@ OBJ =	moves.o\
 	delarr.o\
 	get_mv.o\
         check_moves.o\
-        do_check.o
+        do_check.o\
+	sort_three.o\
+	sort_five.o
+
 
 
 all: $(NAME)
