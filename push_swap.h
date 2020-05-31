@@ -24,11 +24,14 @@ void	rr(int *a, int i);
 void	push_to_a(int *a, int *alen, int *b, int *blen);
 void	push_to_b(int *a, int *alen, int *b, int *blen);
 void	back_to_a(int *a, int *alen, int *b, int *blen);
+void	p_sort(int *a, int *alen, int *b, int *blen);
 int	sort_a(int *arr, int len);
 int	sort_b(int *arr, int len);
 int	median_a(int *arr, int len);
 int	median_b(int *arr, int len);
 void	place(int n, int *arr, int len);
+void	place_a(int i, int *arr, int len);
+void	place_b(int i, int *arr, int len);
 int	rev(int n, int *arr, int len);
 int	rot(int n, int *arr, int len);
 int	max(int *arr, int len);
@@ -50,5 +53,11 @@ int	check_moves(char **mv);
 char	*get_mv(int fd);
 void	sort_three(int *a, int alen);
 void	sort_five(int *a, int alen);
+int     to_r(int i, int *arr, int len);
+int     to_rr(int i, int *arr, int len);
+int     to_rb(int i, int *arr, int len);
+int     to_rrb(int i, int *arr, int len);
+
+
 
 #endif

@@ -21,7 +21,7 @@ int main(int c, char **v)
 				sort_five(a, alen);
 			else
 				sortting(a, alen);
-			free(a);
+			//free(a);
 			delarr(str);
 		}
 	}

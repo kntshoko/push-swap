@@ -35,9 +35,63 @@ void place(int n, int *arr, int len)
 			r(arr, len);
 		}
 	}
-	else if(rev(n, arr, len) > 0)
+	else 
 	{
 		while(arr[0] != n)
+		{
+			ft_putstr("rrb\n");
+			rr(arr,len);
+		}
+	}
+}
+
+
+
+void place_a(int i, int *arr, int len)
+{
+	int ro;
+	int rro;
+
+	ro = to_r(i,arr,len);
+	rro = to_rr(i,arr,len);
+	if( rot(ro, arr, len) < rev(rro, arr,len))
+	{
+		while( arr[0] != ro)
+		{
+			ft_putendl("ra");
+			r(arr, len);
+		}
+	}
+	else 
+	{
+		while(arr[0] != rro)
+		{
+			ft_putendl("rra");
+			rr(arr,len);
+		}
+	}
+}
+
+
+
+void place_b(int i, int *arr, int len)
+{
+	int ro;
+	int rro;
+
+	ro = to_rb(i,arr,len);
+	rro = to_rrb(i,arr,len);
+	if( rot(ro, arr, len) < rev(rro, arr,len))
+	{
+		while( arr[0] != ro)
+		{
+			ft_putendl("rb");
+			r(arr, len);
+		}
+	}
+	else 
+	{
+		while(arr[0] != rro)
 		{
 			ft_putendl("rrb");
 			rr(arr,len);

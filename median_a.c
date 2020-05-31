@@ -22,6 +22,13 @@ int median_a(int *arr, int len)
 			}
 		}
 	}
-	temp = ar[len/2];
-	return(temp);
+
+	j = 10;
+/*	while(j > 2)
+	{
+		if(len / j && (len / j) != 1)
+			return(arr[len/j]);
+		j = j- 2;
+	}*/
+	return(ar[len/4]);
 }

@@ -4,10 +4,10 @@ void push_to_b(int *a, int *alen, int *b, int *blen)
 {
 	 int i;
 
-	while(sort_a(a, *alen) != 1)
+	while(sort_a(a,*alen) != 1)
 	{
 		i = median_a(a, *alen);
-		while(sort_a(a, *alen) != 1 && mid_a(i, a, *alen) != 1 )
+		while(sort_a(a,*alen) != 1 && mid_a(i, a, *alen) != 1 )
 		{
 			if(a[0] > a[1])
 			{
@@ -21,8 +21,13 @@ void push_to_b(int *a, int *alen, int *b, int *blen)
 			}
 			else
 			{
-				ft_putendl("ra");
-				r(a, *alen);
+				//if(*alen < 20)
+				//{
+					ft_putendl("rra");
+					rr(a, *alen);
+				//}
+				//else
+					//place_a(i,a,*alen);
 			}
 		}
 	}

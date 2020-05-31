@@ -20,8 +20,14 @@ void push_to_a(int *a, int *alen, int *b, int *blen)
 			}
 			else
 			{
-				ft_putendl("rrb");
-				rr(b, *blen);
+				if(*blen < 20)
+				{
+					ft_putendl("rb");
+					r(b, *blen);
+				}
+                                else
+					place_b(i,b,*blen);
+
 			}
 		}
 	}
