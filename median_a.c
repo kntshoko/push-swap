@@ -23,12 +23,10 @@ int median_a(int *arr, int len)
 		}
 	}
 
-	j = 10;
-/*	while(j > 2)
-	{
-		if(len / j && (len / j) != 1)
-			return(arr[len/j]);
-		j = j- 2;
-	}*/
-	return(ar[len/4]);
+	j = len / 10 + len / 10 ;
+	if(j < 2)
+		j = 2;
+	else if(j == 50)
+		j = 9;
+	return(ar[j]);
 }

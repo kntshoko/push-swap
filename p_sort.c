@@ -15,22 +15,7 @@ void p_sort(int *a, int *alen, int *b, int *blen)
 				p(a, alen, b, blen);
 			}
 			else
-                                place_a(i,a,*alen);
+				place_a(i,a,*alen);
 		}
 	}
-
-/*	while(*blen > 30)
-	{
-		i = median_b(b, *blen);
-		while(*blen >  30 && mid_b(i, b, *blen) != 1 )
-		{
-			if(b[0] > i)
-			{
-				ft_putendl("pa");
-				p(b, blen, a, alen);
-			}
-			else
-                                place_b(i,b,*blen);
-		}
-	}*/
 }

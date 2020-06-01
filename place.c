@@ -72,30 +72,3 @@ void place_a(int i, int *arr, int len)
 	}
 }
 
-
-
-void place_b(int i, int *arr, int len)
-{
-	int ro;
-	int rro;
-
-	ro = to_rb(i,arr,len);
-	rro = to_rrb(i,arr,len);
-	if( rot(ro, arr, len) < rev(rro, arr,len))
-	{
-		while( arr[0] != ro)
-		{
-			ft_putendl("rb");
-			r(arr, len);
-		}
-	}
-	else 
-	{
-		while(arr[0] != rro)
-		{
-			ft_putendl("rrb");
-			rr(arr,len);
-		}
-	}
-}
-

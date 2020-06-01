@@ -19,60 +19,46 @@ MAIN2 = main_checker.c
 CC = gcc
 FLAG = -Wall -Werror -Wextra
 ARC = ar rc
-SRC =	moves.c\
-	place.c\
-	push_to_b.c\
-	target.c\
-	back_to_a.c\
-	ok.c\
-	word_count.c\
-	max_min.c\
-	sort_a.c\
+SRC =	check_moves.c\
 	convert.c\
+	delarr.c\
+	do_check.c\
+	get_mv.c\
+	max_min.c\
 	median_a.c\
-	median_b.c\
-	sort_b.c\
-	push_to_a.c\
+	mid_a.c\
+	moves.c\
+	ok.c\
+	place.c\
+	p_sort.c\
+	sort_a.c\
+	sort_five.c\
+	sort_three.c\
 	sortting.c\
 	tools.c\
-	mid_b.c\
-	mid_a.c\
-	delarr.c\
-	get_mv.c\
-	check_moves.c\
-	do_check.c\
-	sort_three.c\
-	sort_five.c\
 	to_push_a.c\
-	p_sort.c
+	word_count.c\
+	
 
-OBJ =	moves.o\
-	place.o\
-	push_to_b.o\
-	target.o\
-	back_to_a.o\
-	ok.o\
-	word_count.o\
-	max_min.o\
-	sort_a.o\
+OBJ =	check_moves.o\
 	convert.o\
+	delarr.o\
+	do_check.o\
+	get_mv.o\
+	max_min.o\
 	median_a.o\
-	median_b.o\
-	sort_b.o\
-	push_to_a.o\
+	mid_a.o\
+	moves.o\
+	ok.o\
+	place.o\
+	p_sort.o\
+	sort_a.o\
+	sort_five.o\
+	sort_three.o\
 	sortting.o\
 	tools.o\
-	mid_a.o\
-	mid_b.o\
-	delarr.o\
-	get_mv.o\
-        check_moves.o\
-        do_check.o\
-	sort_three.o\
-	sort_five.o\
 	to_push_a.o\
-	p_sort.o
-
+	word_count.o\
 
 all: $(NAME)
 

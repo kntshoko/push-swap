@@ -17,8 +17,13 @@ int main(int c, char **v)
 			a = convert(str, ' ');
 			if(alen == 3 )
 				sort_three(a,alen);
-			else if(alen < 6)
-				sort_five(a, alen);
+			else if(alen == 2)
+			{
+				s(a,alen);
+				ft_putendl("sa");
+			}
+			/*else if(alen < 6)
+				sort_five(a, alen);*/
 			else
 				sortting(a, alen);
 			//free(a);
