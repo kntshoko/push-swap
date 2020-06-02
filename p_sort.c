@@ -3,10 +3,10 @@
 void p_sort(int *a, int *alen, int *b, int *blen)
 {
 	int i;
-	while(*alen > 4)
+	while(*alen > 0)
 	{
 		i = median_a(a, *alen);
-		while(4 < *alen && mid_a(i, a, *alen) != 1 )
+		while(0 < *alen && mid_a(i, a, *alen) != 1 )
 		{
 			if(a[0] < i)
 			{

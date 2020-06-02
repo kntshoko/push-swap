@@ -14,19 +14,21 @@ int main(int c, char **v)
 		if(str!= NULL)
 		{
 			alen = wordcount(str);
-			a = convert(str, ' ');
+			a = convert(str,alen);
+	
 			if(alen == 3 )
 				sort_three(a,alen);
-			else if(alen == 2)
+			else if(alen == 2 && sort_a(a, alen) != 1)
 			{
 				s(a,alen);
 				ft_putendl("sa");
 			}
-			else if(alen < 6)
+			else if(alen > 1&& alen < 6)
 				sort_five(a, alen);
-			else
+			else if(alen > 5)
 				sortting(a, alen);
-			//free(a);
+			if(alen > 0)
+				free(a);
 			delarr(str);
 		}
 	}

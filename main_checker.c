@@ -24,25 +24,24 @@ int main(int c, char **v)
 						ft_putendl("OK");
 					else
 						ft_putendl("KO");
-					delarr(mv);
 				}
 				else
 					ft_putendl("Error");
-			free(a);
 			}
 			else if(sort_a(a,alen) == 1)
-			{
 				ft_putendl("OK");
-				free(a);
-			}
 			else 
 				ft_putendl("KO");
+			free(a);
 		}
 		else
 			ft_putendl("Error");
 	}
-	ft_strdel(&ins);
+	if(ins)
+		ft_strdel(&ins);
 	if(str)
 		delarr(str);
+	if(mv)
+		delarr(mv);
 	return(0);
 }

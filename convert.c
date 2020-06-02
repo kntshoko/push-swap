@@ -3,8 +3,9 @@
 int *convert(char **str, int len)
 {
 	int i;
-	int ar[len];
+	int *ar;
 
+	ar = (int *)malloc(sizeof(int)*(len));
 	i = 0;
 	while(str[i] != NULL)
 	{
