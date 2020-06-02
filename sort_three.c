@@ -4,7 +4,7 @@ void sort_three(int *a, int alen)
 {
 while(sort_a(a, alen) != 1)
 				{
-					if(a[0] > a[1])
+					if(a[0] > a[1] && a[0] != max(a,alen))
 					{
 						ft_putendl("sa");
 						s(a, alen);

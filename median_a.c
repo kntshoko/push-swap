@@ -26,7 +26,7 @@ int median_a(int *arr, int len)
 	j = len / 10 + len / 10 ;
 	if(j < 2)
 		j = 2;
-	else if(j == 50)
-		j = 9;
+	else if((j % 15) == 0)
+		j = 50;
 	return(ar[j]);
 }

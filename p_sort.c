@@ -3,7 +3,6 @@
 void p_sort(int *a, int *alen, int *b, int *blen)
 {
 	int i;
-	
 	while(*alen > 4)
 	{
 		i = median_a(a, *alen);

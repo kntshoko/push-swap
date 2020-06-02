@@ -22,8 +22,8 @@ int main(int c, char **v)
 				s(a,alen);
 				ft_putendl("sa");
 			}
-			/*else if(alen < 6)
-				sort_five(a, alen);*/
+			else if(alen < 6)
+				sort_five(a, alen);
 			else
 				sortting(a, alen);
 			//free(a);

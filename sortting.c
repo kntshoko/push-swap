@@ -9,7 +9,7 @@ void sortting(int *a, int alen)
 	p_sort(a, &alen, b, &blen);
 	while(alen > 0)
 	{
-	//	place_a(min(a,alen),a,alen);
+		place_a(min(a,alen),a,alen);
 		ft_putendl("pb");
 		p(a,&alen,b,&blen);
 	}
