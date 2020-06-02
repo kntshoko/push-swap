@@ -18,8 +18,8 @@ char	*ft_itoa(int n)
 
 	if (!(str = (char *)ft_memalloc(sizeof(char) * 2)))
 		return (NULL);
-	if (n == -2147483648)
-		return (ft_strcpy(str, "-2147483648"));
+/*	if (n == -2147483648)
+		return (ft_strcpy(str, "-2147483648"));*/
 	if (n < 0)
 	{
 		str[0] = '-';

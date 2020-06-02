@@ -8,25 +8,29 @@ int main(int c, char **v)
 	int *a;
 	int alen;
 
-	ins = get_mv(0);
-	mv = ft_strsplit(ins, ' ');
+	
 	if (c > 1)
 	{
 		if((str = ok(v)) != NULL)
 		{
+			ins = get_mv(0);
+			mv = ft_strsplit(ins, ' ');
 			alen = wordcount(str);
 			a = convert(str, alen);
 			if(mv)
 			{
+				
 				if((check_moves(mv)) == 1)
 				{
 					if(do_check(mv,a,alen) == 1)
 						ft_putendl("OK");
 					else
 						ft_putendl("KO");
+						ft_strdel(&ins);
 				}
 				else
-					ft_putendl("Error");
+					ft_putendl("Error1");
+					
 			}
 			else if(sort_a(a,alen) == 1)
 				ft_putendl("OK");
@@ -35,13 +39,14 @@ int main(int c, char **v)
 			free(a);
 		}
 		else
-			ft_putendl("Error");
-	}
-	if(ins)
-		ft_strdel(&ins);
-	if(str)
+			ft_putendl("Error2");
+				if(str)
 		delarr(str);
 	if(mv)
 		delarr(mv);
+	}
+	
+	//	
+
 	return(0);
 }

@@ -6,6 +6,7 @@ char *get_mv(int fd)
 	char *temp;
 	char *ins;
 	
+	ins = NULL;
 	while(get_next_line(fd,&str) == 1)
 	{
 		if(ins != NULL)
@@ -16,7 +17,7 @@ char *get_mv(int fd)
 		ft_strdel(&str);
 			ft_strdel(&temp);
 		}
-		else
+		else if(str != NULL)
 			ins = ft_strdup(str);
 	}
 	return (ins);
