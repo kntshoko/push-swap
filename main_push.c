@@ -16,16 +16,16 @@ int main(int c, char **v)
 			alen = wordcount(str);
 			a = convert(str,alen);
 	
-			if(alen == 3 )
+			if(alen == 3 && sort_a(a,alen) != 1)
 				sort_three(a,alen);
 			else if(alen == 2 && sort_a(a, alen) != 1)
 			{
 				s(a,alen);
 				ft_putendl("sa");
 			}
-			else if(alen > 1&& alen < 6)
+			else if(alen > 1 && alen < 6 && sort_a(a,alen) != 1)
 				sort_five(a, alen);
-			else if(alen > 5)
+			else if(alen > 5 && sort_a(a,alen) != 1)
 				sortting(a, alen);
 			if(alen > 0)
 				free(a);
