@@ -8,7 +8,7 @@ int main(int c, char **v)
 	int *a;
 	int alen;
 
-	
+	mv = NULL;	
 	if (c > 1)
 	{
 		if((str = ok(v)) != NULL)
@@ -29,7 +29,7 @@ int main(int c, char **v)
 						ft_strdel(&ins);
 				}
 				else
-					ft_putendl("Error1");
+					ft_putendl("Error");
 					
 			}
 			else if(sort_a(a,alen) == 1)
@@ -39,7 +39,7 @@ int main(int c, char **v)
 			free(a);
 		}
 		else
-			ft_putendl("Error2");
+			ft_putendl("Error");
 				if(str)
 		delarr(str);
 	if(mv)

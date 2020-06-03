@@ -15,7 +15,6 @@
 
 
 # include "libft/libft.h"
-# include <stdio.h>
 
 void	s(int *a, int len);
 void	p(int *a, int *alen, int *b, int *blen);
